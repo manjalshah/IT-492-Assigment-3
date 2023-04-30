@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personalized Recommendations</title>
+</head>
+  <style>
+       body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+ul {
+    list-style: none;
+    margin: 50px auto;
+    padding: 0;
+    width: 80%;
+    max-width: 600px;
+    background-color: #FFD700; /* yellow background color */
+    background-image: linear-gradient(to bottom, #FFD700, #FFFF66); /* yellow gradient */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333; /* dark text color */
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+p {
+    text-align: center;
+    margin-top: 50px;
+}
+    </style>
+<body>
+    <h1>Personalized Recommendations</h1>
+    {% if recommendations %}
+        <ul>
+        {% for recommendation in recommendations %}
+            <li>{{ recommendation }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendations to display.</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Hours Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+    </style>
+</head>
+<body>
+<h1>Add Data</h1>
+<form action="addata" method="post">
+    <label for="userid">User ID:</label>
+    <input type="text" id="userid" name="userid" required>
+<!--    <label for="gamename">Game Name:</label>-->
+<!--    <select id="gamename" name="gamename">-->
+<!--        {% for option in options %}-->
+<!--            <option value="{{ option }}">{{ option }}</option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+    <label for="gamename">Game Name:</label>
+    <input type="text" id="gamename" name="gamename" required>
+    <label for="gtype">Game Type:</label>
+    <input type="text" id="gtype" name="gtype" required>
+    <label for="hours">Hours Played:</label>
+    <input type="text" id="hours" name="hrs" required>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

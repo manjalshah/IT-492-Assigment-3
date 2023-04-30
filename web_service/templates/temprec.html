@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Two Lists Webpage</title>
+  <style>
+    body {
+            font-family: Arial, sans-serif;
+        background-color: #8affed;
+        margin: 0;
+        padding: 0;
+        }
+   .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.list {
+  width: 45%;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom, #8ab6d6, #3a5e8f);
+}
+
+.list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.list li {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #d7e7f4;
+  font-weight: bold;
+}
+
+.list h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #2a2a2a;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #9b8e22;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="list">
+      <h2>Similar Users Liked</h2>
+      <ul>
+        {% for item in recommendations %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="list">
+      <h2>Recommendation for You</h2>
+      <ul>
+        {% for item in another %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="button">
+      <form action="fina/{{username}}">
+        <button type="submit">Personalize</button>
+    </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mello</title>
+</head>
+ <style>
+     body {
+            font-family: Arial, sans-serif;
+        background-color: #414040;
+        margin: 0;
+        padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 200px;
+            color: #F5F5F5;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 220px;
+        }
+        label {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+        #add_data {
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        #update {
+            background-color: gold;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+</style>
+<body>
+<h1>Recommendation system</h1>
+<form action="process" method="post">
+    <label for="html"></label>
+    <input type="text" id="html" name="ide" value="Enter user-ID">
+<button type="submit">recommend</button>
+
+</form>
+<!--<form action="anoprocess" method="post">-->
+<!--    <label for="html"></label>-->
+<!--    <input type="text" id="html" name="ide" value="HTML">-->
+<!--<button type="submit">search</button>-->
+
+<!--</form>-->
+
+   <form action="upd">
+        <button type="submit" id="update">update</button>
+    </form>
+   <form action="adder">
+        <button type="submit" id="add_data">add_data</button>
+    </form>
+</body>
+</html>
