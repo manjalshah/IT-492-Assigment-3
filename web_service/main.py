@@ -56,7 +56,6 @@ def homer(request: Request):
 
 @app.get("/upd",response_class=HTMLResponse)
 def upder(request: Request):
-    prep()
     updater()
     return templates.TemplateResponse("hello.html", {"request": request})
 
@@ -75,7 +74,7 @@ def upder(request: Request):
 def tempo(*,ide:str = Form(...),request:Request):
 
     recommenda = recommend(ide)
-    recommendations = reco(FINAL_usergamemat,FINAL_simmat,FINAL_meanmapper,ide)
+    recommendations = reco(ide)
 
       # HTTPException(status_code=404, detail="User not found")
     print(recommendations)
