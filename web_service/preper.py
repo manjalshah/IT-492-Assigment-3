@@ -1,42 +1,25 @@
 
 import numpy as np
 import pandas as pd
-import models
 from database import engine
 
 import sqlalchemy as ds
 from sqlalchemy.ext.declarative import declarative_base
-import pandas
-Base = declarative_base()
-
-# DEFINE THE ENGINE (CONNECTION OBJECT)
-engines = ds.create_engine("postgresql+psycopg2://postgres:Envious@localhost/envy")
-import warnings
-warnings.filterwarnings("ignore")
-
-
-
 from sklearn import preprocessing
-
 import warnings
 warnings.filterwarnings("ignore")
+
+Base = declarative_base()
+# DEFINE THE ENGINE (CONNECTION OBJECT)
+engines = ds.create_engine("postgresql+psycopg2://postgres:mms10503@localhost/postgres")
+
+
 
 def prepy():
-    df = pandas.read_sql_query(
-        sql=ds.select([models.steams.userid,
-                       models.steams.gamename,
-                       models.steams.gtype,
-                       models.steams.hrs]),
-        con=engine
-    )
 
+    df = pd.read_sql_table('steams', engines)
     df.drop_duplicates(keep='last', inplace=True)
-    # user_le = preprocessing.LabelEncoder()
-    # user_le.fit(df['userid'])
-    # df['userid'] = user_le.transform(df['userid'])
-    # game_le = preprocessing.LabelEncoder()
-    # game_le.fit(df['gamename'])
-    # df['gamename'] = game_le.transform(df['gamename'])
+    
     df= df[(df['hrs']>=2) & (df['gtype']=='play')]
     df = df[df.groupby('gamename').userid.transform(len)>=10]
 
@@ -81,4 +64,3 @@ def prepy():
     print(train.head(50))
 
     return train, test, user_le, game_le
-

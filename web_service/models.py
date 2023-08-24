@@ -12,7 +12,7 @@ class steams(Base):
     gtype = Column(String)
     hrs = Column(Integer)
     __table_args__ = (
-        PrimaryKeyConstraint(userid, gamename,gtype,hrs),
+        PrimaryKeyConstraint(userid, gamename, gtype, hrs),
         {},
     )
 
